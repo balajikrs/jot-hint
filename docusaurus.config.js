@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Jot a Hint',
   tagline: 'Quick notes always helps when neeeeded ! ',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/post-it.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
