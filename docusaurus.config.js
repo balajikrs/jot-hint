@@ -62,11 +62,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/pexels-polina-zimmerman-3782231.jpg',
       navbar: {
         title: 'Jot a Hint',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Jot a Hint Logo',
           src: 'img/post-it.png',
         },
         items: [
