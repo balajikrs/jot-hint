@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Jot a Hint',
-  tagline: 'Quick notes always helps when needed ! ',
+  tagline: 'Quick notes always helps when neeeeded ! ',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -76,7 +76,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
