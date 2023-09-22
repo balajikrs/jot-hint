@@ -4,7 +4,7 @@
   * Custom VPC
 ### Default VPC Facts
 * one per region - can be removed and recreated
-* will have default predefined CIDR allocation 172.31.0.0/16
+* will have <Highlight color="#1877F2"> default predefined CIDR allocation 172.31.0.0/16 </Highlight>
 * structure cannot be changed - limiting prod deployments - huge ip range
 * based on number of AZ it will create /20 CIDRs per AZ
 * /16 default CIDR can have up to 16(if Az) /20 CIDR
@@ -18,3 +18,18 @@
 * Best practice is not to use default VPC
 
 
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '20px',
+      color: '#fff',
+      padding: '5px',
+      cursor: 'pointer',
+    }}
+    onClick={() => {
+      //alert(`You clicked the color ${color} with label ${children}`);
+    }}>
+    {children}
+  </span>
+);
