@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
+import './styles.module.css';
 
 export default function Hello(props) {
   const [count, setCount] = useState(9898);
@@ -44,15 +45,7 @@ export default function Hello(props) {
   };
   return (
     <Layout title="Hello" description="Hello React Page">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '50vh',
-          fontSize: '20px',
-        }}
-      >
+      <div className="Iobox">
         <p>
           Edit <code>pages/helloReact.js</code> {count} and save to reload.
           <br />
@@ -64,8 +57,12 @@ export default function Hello(props) {
           />
           <label>Output</label>
           <textarea value={formatTo72(cntnt).join('\r')} />
-          <button onClick={() => setCount(count + 1)}>+</button>
-          <button onClick={() => setCount(count - 1)}>-</button>
+          <button className="Button" onClick={() => setCount(count + 1)}>
+            +
+          </button>
+          <button className="Button" onClick={() => setCount(count - 1)}>
+            -
+          </button>
           {/* <button onClick={addcount()}>increment</button> */}
         </p>
       </div>
