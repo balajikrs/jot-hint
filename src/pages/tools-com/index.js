@@ -20,7 +20,7 @@ export default function Hello(props) {
     let z = inputArray[i].length;
     let maxLength = 72;
     // console.log(z);
-    outputArray = inputArray.reduce(
+    outputArray = modifiedData.reduce(
       (previousValue, currentValue, CurrentIndex, fullArray) => {
         if (previousValue.length == 0) {
           previousValue.push(currentValue);
@@ -63,7 +63,7 @@ export default function Hello(props) {
             }}
           />
           <label>Output</label>
-          <textarea value={formatTo72(cntnt).join('\n')} />
+          <textarea value={formatTo72(cntnt).join('\r')} />
           <button onClick={() => setCount(count + 1)}>+</button>
           <button onClick={() => setCount(count - 1)}>-</button>
           {/* <button onClick={addcount()}>increment</button> */}
