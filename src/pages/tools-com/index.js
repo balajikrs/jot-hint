@@ -46,26 +46,34 @@ export default function Hello(props) {
   };
   return (
     <Layout title="Hello" description="Hello React Page">
-      <div className={styles.Iobox}>
-        <p>
-          Edit <code>pages/helloReact.js</code> {count} and save to reload.
-          <br />
+      <div className={styles.iocontainer}>
+        <div className={styles.ioinnercontainer}>
+          {/* <p> */}
+          {/* Edit <code>pages/helloReact.js</code> {count} and save to reload. */}
+          {/* <br /> */}
           <label>Input</label>
           <textarea
+            className={styles.iotextarea}
             onChange={(e) => {
               setCntnt(e.target.value.split('\n'));
             }}
           />
+        </div>
+        <div className={styles.ioinnercontainer}>
           <label>Output</label>
-          <textarea value={formatTo72(cntnt).join('\r')} />
-          <button className={styles.Button} onClick={() => setCount(count + 1)}>
+          <textarea
+            className={styles.iotextarea}
+            value={formatTo72(cntnt).join('\r')}
+          />
+          {/* <button className={styles.Button} onClick={() => setCount(count + 1)}>
             +
           </button>
           <button className={styles.Button} onClick={() => setCount(count - 1)}>
             -
-          </button>
+          </button> */}
           {/* <button onClick={addcount()}>increment</button> */}
-        </p>
+          {/* </p> */}
+        </div>
       </div>
     </Layout>
   );
