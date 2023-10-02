@@ -60,3 +60,31 @@ Has 3 main jobs
     > we created a alarm when we created a account in Billing; to trigger a alaram when the billing is greater than $0
   - Alarm in `Insufficient_Data` state - it will be in this state untill it has enough data to access whether it is `ok` or `ALARM` state
     - It is fine meaning system is gathering enough data
+
+:::tip
+use stress utility to trigger alarm in linux ec2 instance
+:::
+
+```bash
+sudo yum install stress -y
+```
+
+> here `yum` is a package manger to used to install the stress utility
+> `sudo` is the command to install in linux
+
+#### Demo Steps
+
+> - Create an EC2 instance
+> - t2.micro
+> - ensure its set to the default VPC and has a public IP
+> - **Optionally** enable detailed monitoring **`involves extra cost`**
+> - Connect to the instance and install Extras package and stress
+> - Install stress (commands listed in code sample below)
+> - Create an alarm based on the CPU Utilisation of the created instance
+> - Threshold greater than 15%
+> - Run stress 'stress -c 2'
+> - Wait for alarm to .. alarm
+> - use ctrl + c to cancel stress
+> - Wait for alarm to return to ..ok
+> - Delete the alarm
+> - Delete the instance
