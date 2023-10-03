@@ -12,8 +12,10 @@
 - Does not mean Customer will not experience any outage
 - HA is maximizing the system's online time and minimizing outage
 
-:::TIP
+:::tip
+
 HA does not mean, system is does not fails or user of the system never experience outage
+
 :::
 
 - This can be by having redundant servers so user can switch in event of failure to minimize down time
