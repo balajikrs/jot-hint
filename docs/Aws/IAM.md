@@ -111,6 +111,19 @@ arn:aws:s3;::catgif/* --> this refers to objectes in the bucket
 * Users can also have separate policy attached
 * when there are multiple policies for users, its groups... merge them and apply `allow-deny-allow` rule on them
 
+*  One user can be in a maximum of only 10 groups
+
 :::tip
-we cannot login into a group. it has no credentials too.
+* we cannot login into a group. it has no credentials too.
+* One user can be in a maximum of only 10 groups and its a hard limit.
+* There is no All users group in IAM
+* No nesting - No Groups within groups
+* 300 groups soft limit for an account. this can be increased with a support ticket
 :::
+
+* Resource Policy:
+    * Policy attached to a resource
+    * It can allow access to a specific user/identities (using their ARN)
+    * Groups are not a true identity. They cannot be refered as principal in a resource policy
+## IAM Roles
+* Principal - physical person, application device or process
