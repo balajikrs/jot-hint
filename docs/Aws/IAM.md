@@ -127,3 +127,42 @@ arn:aws:s3;::catgif/* --> this refers to objectes in the bucket
     * Groups are not a true identity. They cannot be refered as principal in a resource policy
 ## IAM Roles
 * Principal - physical person, application device or process
+* External principal or internal principal can use the iam role
+* Many users can assume a Iam roles
+* roles are used on a temporary basis
+* if we can't identify number of principals for any identity then it could be candidate for a iam role
+* Role doesn't represent you, instead it represent the levels of access inside the aws account
+* roles can have policies attached to them via inline or manageed policies. These are called as permissions policies.
+* Roles
+    - Trust policy [which identities can assume that role]
+        - can have other identities like user,roles, aws services, others from different account, it can allow anonymous usage of role, other type of identities like facebook, twitter, google etc
+    - Permissions policy[what access the role gets]
+* Roles when allowed create temporary security credentials (bys STS service called security token service)
+* can be refered in resource policies like policies of a s3 bucket
+`sts:AssumeRole`
+
+### Common usage of roles
+* Aws service use roles - eg. they need certain rights to perform certain actions eg.aws lambda [ like starting a ec2 instance, might perform backups, real time data processing]
+* Lambda execution role- a trust policy for the corresponding lambda
+* This lambda execution role will have a permissions policy that grants access to aws product and services. when function run it uses sts:AssumeRole operation, sts genrates temporary credentials --> then run time environment can use the temp credentials to access aws resouces based on what ever permissions that permission policy has.
+### Why role is better suitable ?
+* If role is not there then we need to hard code the keys in the lambda - which is a security risk that we have to avoid at all means, also causes issues when time to rotate the keys
+* when a role is assummed only temporary set of credentials are used with enough time to complete the task and discarded
+* Also at a given point in time we may have any number of lambdas running - non determinable number - unknown. [rule -> if we dont know the number of principals then role is best identity to use]
+
+>Another situation roles can be used:
+>   *  Emergency situations[Break glass situation / firefighting mode]
+>   * Roles are unsed when existing identites needs to re-used within aws
+>   * Help external identites to use AWS accounts they have to use role or if the user base is greater than 5000 users
+* Use of identity federations
+* No identies stored in account
+* uses existing user logins
+* it can scale to 100 of users and beyond
+* when one account has to access another account it can use the roles to access it
+### Service Linked Roles
+* Not much difference between IAM rile and service linked roles
+* IAM role linked to a specific AWS service 
+* Predefined by a service
+* service might create/delete a role 
+* We cant delete the role until its no-longer required
+* Using `PassRole` we can allow users to pass a role already created to a service but cannot have access to create a role. - Helps to implement role separation
