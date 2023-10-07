@@ -88,3 +88,32 @@ sudo yum install stress -y
 > - Wait for alarm to return to ..ok
 > - Delete the alarm
 > - Delete the instance
+
+## Cloud watch Logs
+>*  Public Service - Usable form Aws and on-prem
+>*  Present in  AWS public zone
+>*  Regional Service
+
+* Store, Monitor and access logging data
+* Logging Data + timestamp
+* AWS Integrations
+  * EC2 , VPC Flow Logs, Lambda, CloudTrail, R53 and more
+* EC2 os logs an other onprem logs we can use `unified cloudwatch agent`
+* Metric filter
+
+### Components
+* Log events
+  - Different sources inject data into cloudwatch as cloudwatch logs
+  - contains timestamp and message block
+  - These are treated as raw block of data
+* Log Stream
+  - log events are stored in log streams
+  - log stream is sequence of log events from same source / one instance and another stream for instance 2
+* Log groups
+  - containers for multiple log streams that has same type of logging 
+  - retention setting & permissions are place at log group level
+  - metric filters are defined at log group level
+
+:::tip
+Metric filters can increment a Metric --> Can trigger alarms --> alarms can be used to notify admins or take actions
+:::
