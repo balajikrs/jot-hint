@@ -22,3 +22,20 @@
     - to all regions
         - One trail for all region activities
 * Global service like IAM, STS or Cloud front are global service they will log their events in US-EAST-1 region
+* These global service event are logged if a trail is enabled
+* If we create a trail - the 90 day limit can be expanded
+* the trail can be logged to separate s3 bucket indefinetely [ for the trail 
+it charged only for storage in s3 ]
+* Stored as ` **set of compressed JSON log files** `
+#### Organizational cloud trail
+* it can store all the account's trail in the organization's account 
+
+:::tip
+* Enabled by default - but 90 days no s3 (unless you configure a trail)
+* Trails are how we configure s3 and Cloud watch logs
+* Management events only by default (any interaction with aws products for management purpose )
+* Data events are specifically enabled and come at a cost
+* IAM, STS, Cloudfront - Global service event - `a trail must be enabled to capture global service events`
+* Not a real time - there is a delay 
+* Log files will be delivered within 15 mins of the activity- publishes multiple times an hour
+:::
