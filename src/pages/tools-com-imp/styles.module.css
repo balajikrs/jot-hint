@@ -1,0 +1,76 @@
+*,
+*::before,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.box {
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+ 
+}
+.middlebox {
+  flex: 1;
+  min-width: 100px;
+  max-width: 200px;
+  margin: 10px;
+  padding: 20px;
+  /* background-color: #f0f0f0; */
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  /* text-align: center;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3%;
+}
+
+/* Make the text areas and button responsive */
+.box textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 90%;
+}
+
+.middlebox button {
+  width: 30%;
+  max-width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #007BFF;
+  font-size:xx-large;
+  font-weight: bolder;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .box {
+      flex: 1 1 100%;
+  }
+  .middlebox {
+      flex: 1 1 100%;
+  }
+}
