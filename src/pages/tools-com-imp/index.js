@@ -48,21 +48,26 @@ export default function Hello(props) {
     <Layout title="Add Comma" description="Add Comma - Tool">
       <div className={styles.container}>
         <div className={styles.box}>
-            <textarea rows="25" placeholder="Text Area 1"
-             onChange={(e) => {
+          <textarea
+            rows="25"
+            placeholder="Input Content to be suffixed with commas"
+            onChange={(e) => {
               setCntnt(e.target.value.split('\n'));
-            }}></textarea>
+            }}
+          ></textarea>
         </div>
         <div className={styles.middlebox}>
-            <button>→</button>
+          <button>Add Comma</button>
         </div>
         <div className={styles.box}>
-            <textarea rows="25" placeholder="Text Area 2"
-             value={formatTo72(cntnt).join('\r')}
-            ></textarea>
+          <textarea
+            rows="25"
+            placeholder="Text Area 2"
+            value={formatTo72(cntnt).join('\r')}
+          ></textarea>
         </div>
       </div>
-    {/* </div>
+      {/* </div>
       <div className={styles.iocontainer}>
         <div className={styles.ioinnercontainer}>
           <label>Input</label>

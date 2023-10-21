@@ -22,7 +22,6 @@ body {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 5px;
- 
 }
 .middlebox {
   flex: 1;
@@ -55,22 +54,21 @@ body {
   max-width: 30%;
   padding: 10px;
   box-sizing: border-box;
-  background-color: #007BFF;
-  font-size:xx-large;
+  background-color: #007bff;
+  font-size: large;
   font-weight: bolder;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .box {
-      flex: 1 1 100%;
+    flex: 1 1 100%;
   }
   .middlebox {
-      flex: 1 1 100%;
+    flex: 1 1 100%;
   }
 }
