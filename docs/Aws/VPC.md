@@ -33,3 +33,38 @@ export const Highlight = ({children, color}) => (
     {children}
   </span>
 );
+
+# VPC considerations 
+## Prerequisites to create a custom VPC
+- need to know IP range VPC will use - VPC CIDR range [ we need this in advance]
+- what size should the vpc be ? [ this influences how many services the VPC can fit into]
+  - Each service will use one or more IP and they occupy space in the VPC
+- Are there any network we cannot use
+- Try to avoid vpc ranges that other parties use
+- Try to predict failure
+- VPC structure - Tiers & Resiliency (availablity zones)
+  - Tiers - Web tier
+  - Application Tier
+  - Database Tier and more tier
+## Limitations
+- VPC minimum /28 (16 IP)
+- VPC Maximum /16 (65536 IPs)
+- Personal preference 10.x.y.z range
+- Avoid common ranges eg. 10.0.* and 10.1.* until 10.10
+- we can start from 10.16.* (optional)
+- How many ranges an app requires?
+  - first check how many AWS regions the business will operate on
+    - use high number 
+  - 2 ranges in each region
+  - 4 aws accounts
+
+![vpc sizing](./../../static/img/aws/VPC%20Sizing%20and%20Structure%20-%20PART2%20_%20learn.cantrill.png)
+- How many subnets to use
+- we cannont host services in VPC
+- We need to create subnets in which VPC services runs
+- subnet will be in one availablity zone
+![subnet mask](https://github.com/acantril/aws-sa-associate-saac02/blob/master/XX_TechFundamentals/00_LearningAids/SubnetMask.png)
+
+
+
+
