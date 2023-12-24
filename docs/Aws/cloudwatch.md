@@ -117,3 +117,15 @@ sudo yum install stress -y
 :::tip
 Metric filters can increment a Metric --> Can trigger alarms --> alarms can be used to notify admins or take actions
 :::
+
+- Global services like cloud front operates as through withing US-east-1
+- so we always use us-east-1 for cloud front certificates
+- S3 dont use any certificates to connect with the architecture
+!(acm)['static/img/2023-12-24 08_31_41-[ASSOCIATESHARED] ACM _ learn.cantrill.io.png']
+
+## Cloudfront and SSL
+- cloudfront has a default domain name (CNAME)
+- Always followed by cloudfront.net
+- ssl is suported by default ```*.cloudfront.net``` certificate
+- Alternate domain name (CNAMES) eg. example.com
+- we can point a custom domain name at a cloudfront distribution using a DNS provider such as route53
