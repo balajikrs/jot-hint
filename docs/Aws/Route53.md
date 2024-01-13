@@ -12,7 +12,7 @@
   - Host Zones - managed nameservers
 
 > - Global service - with only one database
-> - Globally resilient
+> - Globally resilient (multiple DNS servers) with name servers distributed globally and have same dataset [even a whole region down it will be still functional]
 
 #### Register Domains with R53 process
 
@@ -115,3 +115,17 @@ MX 20 mail.other.domain.
 - AAAA records point to IPV6 ip
 - generally architech will create 2 records A and AAAA records for same domain
 - client os or DNS client will pick up the correct type of records it wants
+
+## R53 Hosted Zones
+### Public Hosted zone
+
+- Hosted zone is a public database for a given section on  global dns database
+- domain can be purchased some where else and can use r53 to host it.
+- monthly fee for hosting it
+- query charges based on the number of query hits to resolve the dns
+- Host DNS records (eg. A,AAAA,NS,MX,TXT)
+- hosted zones are databases which are referenced via delegation using name server records
+  - create authoritative records for a domain eg.pensive.top
+- DNS database (zone file ) hosted by R53 (public name servers)
+- Accessible from public internet
+- hosted 
